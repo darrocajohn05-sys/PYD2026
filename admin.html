@@ -9,363 +9,244 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    background:#edf2f7;
+background:#edf2f7;
 }
-
-/* BACKGROUND */
 
 body::before{
-
-    content:"";
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:url("66eba521-ce31-478d-bdfc-14ef2f985b65.png") center center no-repeat;
-    background-size:cover;
-    opacity:.12;
-    z-index:-1;
-
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("66eba521-ce31-478d-bdfc-14ef2f985b65.png") center no-repeat;
+background-size:cover;
+opacity:.12;
+z-index:-1;
 }
 
-/* HEADER */
-
 .header{
-
-    background:linear-gradient(90deg,#0d6efd,#0b5ed7);
-    color:white;
-    padding:25px;
-
-    border-radius:0 0 20px 20px;
-
+background:linear-gradient(90deg,#0d6efd,#0b5ed7);
+color:#fff;
+padding:25px;
+border-radius:0 0 20px 20px;
 }
 
 .header h1{
-
-    font-size:28px;
-
+font-size:28px;
 }
 
 .sub{
-
-    margin-top:5px;
-    opacity:.9;
-
+margin-top:5px;
+opacity:.9;
 }
 
 .total-card{
-
-    margin-top:15px;
-
-    display:inline-block;
-
-    background:white;
-
-    color:#222;
-
-    padding:12px 18px;
-
-    border-radius:10px;
-
-    font-weight:bold;
-
-    box-shadow:0 4px 10px rgba(0,0,0,.15);
-
+margin-top:15px;
+display:inline-block;
+background:#fff;
+color:#222;
+padding:12px 18px;
+border-radius:10px;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,.15);
 }
 
-/* WORKSHOP */
-
 .workshops{
-
-    padding:20px;
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-
-    gap:15px;
-
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:15px;
 }
 
 .card{
-
-    background:white;
-
-    border-radius:12px;
-
-    padding:20px;
-
-    text-align:center;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-
+background:#fff;
+border-radius:12px;
+padding:20px;
+text-align:center;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
 .card:hover{
-
-    transform:translateY(-5px);
-
+transform:translateY(-5px);
 }
 
 .card h3{
-
-    margin-bottom:8px;
-
-    font-size:15px;
-
+margin-bottom:8px;
+font-size:15px;
 }
 
 .card p{
-
-    font-size:20px;
-
-    font-weight:bold;
-
+font-size:20px;
+font-weight:bold;
 }
 
-/* TABLE */
-
 .table-box{
-
-    background:white;
-
-    margin:20px;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-
-    overflow:auto;
-
+background:#fff;
+margin:20px;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+overflow:auto;
 }
 
 .title-row{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:15px;
-
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
 }
 
 #title{
-
-    font-size:20px;
-
-    font-weight:bold;
-
+font-size:20px;
+font-weight:bold;
 }
 
 .delete-all{
-
-    background:#dc3545;
-
-    color:white;
-
-    border:none;
-
-    padding:10px 18px;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
+background:#dc3545;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:8px;
+cursor:pointer;
 }
 
 table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-    min-width:700px;
-
+width:100%;
+border-collapse:collapse;
+min-width:900px;
 }
 
 th{
-
-    background:#0d6efd;
-
-    color:white;
-
-    padding:12px;
-
+background:#0d6efd;
+color:white;
+padding:12px;
 }
 
 td{
-
-    padding:10px;
-
-    text-align:center;
-
-    border-bottom:1px solid #ddd;
-
+padding:10px;
+text-align:center;
+border-bottom:1px solid #ddd;
 }
 
 img{
-
-    width:60px;
-
-    height:60px;
-
-    object-fit:cover;
-
-    border-radius:8px;
-
+width:60px;
+height:60px;
+object-fit:cover;
+border-radius:8px;
 }
 
 .view{
-
-    background:#198754;
-
-    color:white;
-
-    border:none;
-
-    padding:6px 10px;
-
-    border-radius:5px;
-
-    cursor:pointer;
-
+background:#198754;
+color:white;
+border:none;
+padding:6px 10px;
+border-radius:5px;
+cursor:pointer;
 }
 
 .del{
-
-    background:#dc3545;
-
-    color:white;
-
-    border:none;
-
-    padding:6px 10px;
-
-    border-radius:5px;
-
-    cursor:pointer;
-
+background:#dc3545;
+color:white;
+border:none;
+padding:6px 10px;
+border-radius:5px;
+cursor:pointer;
 }
 
 .empty{
-
-    text-align:center;
-
-    color:#777;
-
-    padding:30px;
-
+text-align:center;
+padding:25px;
+color:#666;
 }
-
-/* RESPONSIVE */
 
 @media(max-width:768px){
 
 .header{
-
 text-align:center;
-
 }
 
 .total-card{
-
 display:block;
-
 }
 
 .title-row{
-
 flex-direction:column;
-
-gap:10px;
-
 align-items:flex-start;
-
+gap:10px;
 }
 
 }
 
 </style>
-
 </head>
 
-    <body>
+<body>
 
 <div class="header">
 
-    <h1>PYD ADMIN DASHBOARD</h1>
+<h1>PYD ADMIN DASHBOARD</h1>
 
-    <div class="sub">
-        Manage and monitor all Parish Youth Day registrations
-    </div>
-
-    <div class="total-card">
-        Total Registrants :
-        <span id="total">0</span>
-    </div>
-
+<div class="sub">
+Manage and monitor all Parish Youth Day registrations
 </div>
 
-<!-- WORKSHOP CARDS -->
+<div class="total-card">
+Total Registrants :
+<span id="total">0</span>
+</div>
+
+</div>
 
 <div class="workshops">
 
-    <div class="card" onclick="show('BAKING')">
-        <h3>BAKING</h3>
-        <p id="w1">0/25</p>
-    </div>
+<div class="card" onclick="show('BAKING')">
+<h3>BAKING</h3>
+<p id="w1">0/25</p>
+</div>
 
-    <div class="card" onclick="show('NITO MAKING')">
-        <h3>NITO MAKING</h3>
-        <p id="w2">0/25</p>
-    </div>
+<div class="card" onclick="show('NITO MAKING')">
+<h3>NITO MAKING</h3>
+<p id="w2">0/25</p>
+</div>
 
-    <div class="card" onclick="show('ROSARY MAKING')">
-        <h3>ROSARY MAKING</h3>
-        <p id="w3">0/25</p>
-    </div>
+<div class="card" onclick="show('ROSARY MAKING')">
+<h3>ROSARY MAKING</h3>
+<p id="w3">0/25</p>
+</div>
 
-    <div class="card" onclick="show('BAMBOO MAKING')">
-        <h3>BAMBOO MAKING</h3>
-        <p id="w4">0/25</p>
-    </div>
+<div class="card" onclick="show('BAMBOO MAKING')">
+<h3>BAMBOO MAKING</h3>
+<p id="w4">0/25</p>
+</div>
 
-    <div class="card" onclick="show('POTTERY MAKING')">
-        <h3>POTTERY MAKING</h3>
-        <p id="w5">0/25</p>
-    </div>
+<div class="card" onclick="show('POTTERY MAKING')">
+<h3>POTTERY MAKING</h3>
+<p id="w5">0/25</p>
+</div>
 
-    <div class="card" onclick="show('RUG MAKING')">
-        <h3>RUG MAKING</h3>
-        <p id="w6">0/25</p>
-    </div>
+<div class="card" onclick="show('RUG MAKING')">
+<h3>RUG MAKING</h3>
+<p id="w6">0/25</p>
+</div>
 
-    <div class="card" onclick="show('TABLE SKIRTING')">
-        <h3>TABLE SKIRTING</h3>
-        <p id="w7">0/25</p>
-    </div>
+<div class="card" onclick="show('TABLE SKIRTING')">
+<h3>TABLE SKIRTING</h3>
+<p id="w7">0/25</p>
+</div>
 
 </div>
 
-<!-- TABLE -->
-
-<div class="table-box">
+    <div class="table-box">
 
     <div class="title-row">
 
@@ -390,13 +271,11 @@ align-items:flex-start;
             <tr>
 
                 <th>Full Name</th>
-
-                <th>Zone</th>
-
+                <th>Age</th>
+                <th>Zone / GKK</th>
                 <th>Contact</th>
-
+                <th>Shirt</th>
                 <th>Picture</th>
-
                 <th>Action</th>
 
             </tr>
@@ -413,15 +292,21 @@ align-items:flex-start;
 
 <script>
 
-// Protect Admin
+// ===========================
+// ADMIN SECURITY
+// ===========================
 
-if(sessionStorage.getItem("admin")!=="true"){
+if(sessionStorage.getItem("admin") !== "true"){
 
     alert("Please login first.");
 
-    window.location="login.html";
+    window.location.href="login.html";
 
 }
+
+</script>
+
+<script>
 
 // ===========================
 // LOAD DATA
@@ -430,23 +315,37 @@ if(sessionStorage.getItem("admin")!=="true"){
 let data = JSON.parse(localStorage.getItem("registrations")) || [];
 
 // ===========================
+// WORKSHOP NAMES
+// ===========================
+
+const workshops = [
+
+"BAKING",
+
+"NITO MAKING",
+
+"ROSARY MAKING",
+
+"BAMBOO MAKING",
+
+"POTTERY MAKING",
+
+"RUG MAKING",
+
+"TABLE SKIRTING"
+
+];
+
+    // ===========================
 // UPDATE DASHBOARD
 // ===========================
 
 function update(){
 
+    // Total Registrants
     document.getElementById("total").innerText = data.length;
 
-    const workshops = [
-        "BAKING",
-        "NITO MAKING",
-        "ROSARY MAKING",
-        "BAMBOO MAKING",
-        "POTTERY MAKING",
-        "RUG MAKING",
-        "TABLE SKIRTING"
-    ];
-
+    // Count bawat workshop
     workshops.forEach((workshop,index)=>{
 
         let total = data.filter(person =>
@@ -469,28 +368,22 @@ function show(workshop){
     document.getElementById("title").innerText =
         workshop + " Participants";
 
-    const tbody = document.getElementById("data");
+    let tbody = document.getElementById("data");
 
-    tbody.innerHTML="";
+    tbody.innerHTML = "";
 
     let participants = data.filter(person =>
         person.workshop === workshop
     );
 
-    if(participants.length===0){
+    if(participants.length === 0){
 
-        tbody.innerHTML=`
-
+        tbody.innerHTML = `
         <tr>
-
-        <td colspan="5" class="empty">
-
-        No Participants
-
-        </td>
-
+            <td colspan="7" class="empty">
+                No Participants
+            </td>
         </tr>
-
         `;
 
         return;
@@ -507,16 +400,20 @@ function show(workshop){
 
             <td>${person.fullname}</td>
 
+            <td>${person.age}</td>
+
             <td>${person.zone}</td>
 
             <td>${person.contact}</td>
+
+            <td>${person.shirt}</td>
 
             <td>
 
             ${
                 person.receipt
                 ?
-                `<img src="${person.receipt}">`
+                `<img src="${person.receipt}" alt="Receipt">`
                 :
                 "No Image"
             }
@@ -551,7 +448,7 @@ function show(workshop){
 
 }
 
-// ===========================
+    // ===========================
 // VIEW PARTICIPANT
 // ===========================
 
@@ -565,7 +462,7 @@ function view(index){
 
 Age : ${p.age}
 
-Zone : ${p.zone}
+Zone / GKK : ${p.zone}
 
 GKK President : ${p.gkk}
 
@@ -590,7 +487,8 @@ Date Registered : ${p.date}`
     );
 
 }
-        // ===========================
+
+// ===========================
 // DELETE PARTICIPANT
 // ===========================
 
@@ -607,7 +505,8 @@ function del(index){
 
         update();
 
-        const currentWorkshop =
+        // Hanapin ang workshop na kasalukuyang bukas
+        let currentWorkshop =
             document.getElementById("title")
             .innerText
             .replace(" Participants","");
@@ -630,11 +529,19 @@ function clearAll(){
 
         localStorage.removeItem("registrations");
 
-        data = [];
+        data=[];
 
         update();
 
-        show("BAKING");
+        document.getElementById("data").innerHTML=`
+        <tr>
+            <td colspan="7" class="empty">
+                No Participants
+            </td>
+        </tr>
+        `;
+
+        document.getElementById("title").innerText="Participants";
 
         alert("All registrations have been deleted.");
 
@@ -652,12 +559,27 @@ window.addEventListener("storage",function(){
 
     update();
 
-    const currentWorkshop =
+    let currentWorkshop =
         document.getElementById("title")
         .innerText
         .replace(" Participants","");
 
-    show(currentWorkshop);
+    // Kung wala pang napiling workshop
+    if(currentWorkshop===""){
+
+        let firstWorkshop = workshops.find(workshop =>
+            data.some(person => person.workshop === workshop)
+        );
+
+        if(firstWorkshop){
+            show(firstWorkshop);
+        }
+
+    }else{
+
+        show(currentWorkshop);
+
+    }
 
 });
 
@@ -667,11 +589,32 @@ window.addEventListener("storage",function(){
 
 update();
 
-show("BAKING");
+// Hanapin ang unang workshop na may participant
+let firstWorkshop = workshops.find(workshop =>
+    data.some(person => person.workshop === workshop)
+);
+
+// Automatic ipakita ang workshop na may registrants
+if(firstWorkshop){
+
+    show(firstWorkshop);
+
+}else{
+
+    // Kung wala pang registrant
+    document.getElementById("title").innerText="No Participants Yet";
+
+    document.getElementById("data").innerHTML=`
+    <tr>
+        <td colspan="7" class="empty">
+            No registrations found.
+        </td>
+    </tr>
+    `;
+
+}
 
 </script>
 
 </body>
 </html>
-
-    
