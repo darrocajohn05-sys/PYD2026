@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PYD Registration Form</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f4f4;
+    margin:0;
+}
+
+.container{
+    width:700px;
+    margin:30px auto;
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+.top-bar{
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:20px;
+}
+
+.admin-btn{
+    width:auto;
+    padding:10px 20px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.admin-btn:hover{
+    background:#0b5ed7;
+}
+
+h2{
+    text-align:center;
+    color:#0d6efd;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    box-sizing:border-box;
+}
+
+.radio-group label{
+    font-weight:normal;
+    display:block;
+    margin-top:5px;
+}
+
+.info{
+    background:#eef7ff;
+    padding:15px;
+    border-left:5px solid #0d6efd;
+    margin-top:20px;
+}
+
+.submit-btn{
+    width:100%;
+    padding:12px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:5px;
+    margin-top:20px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.submit-btn:hover{
+    background:#0b5ed7;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+.container{
+    width:90%;
+    max-width:700px;
+}
+
+@media screen and (max-width:768px){
+
+.container{
+    width:95%;
+    padding:15px;
+}
+
+.top-bar{
+    justify-content:center;
+}
+
+.admin-btn{
+    width:100%;
+}
+
+h2{
+    font-size:22px;
+}
+
+}
+
+@media screen and (max-width:480px){
+
+.container{
+    width:98%;
+    padding:12px;
+}
+
+input,
+select,
+textarea,
+button{
+    font-size:14px;
+}
+
+.submit-btn{
+    width:100%;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="top-bar">
+
+<a href="admin.html">
+
+<button type="button" class="admin-btn">
+
+📊 Admin Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+<h2>PYD Registration Form</h2>
+
+<form id="registrationForm">
+
+<label>
+Full Name
+(Surname, First Name, Middle Initial)
+</label>
+
+<input
+type="text"
+id="fullname"
+required>
+
+<label>Age</label>
+
+<input
+type="number"
+id="age"
+required>
+
+<label>GKK and Zone</label>
+
+<input
+type="text"
+id="zone"
+placeholder="Example:GKK New Cuyapo, Zone 1"
+required>
+
+<label>Name of GKK President</label>
+
+<input
+type="text"
+id="gkk"
+required>
+
+<label>Contact Number</label>
+
+<input
+type="tel"
+id="contact"
+required>
+
+<label>Name of Parent / Guardian</label>
+
+<input
+type="text"
+id="guardian"
+required>
+
+<label>Parent / Guardian Contact Number</label>
+
+<input
+type="tel"
+id="guardianContact"
+required>
+
+<label>Preferred Food</label>
+
+<div class="radio-group">
+
+<label>
+<input type="radio" name="food" value="Regular" checked>
+Regular
+</label>
+
+<label>
+<input type="radio" name="food" value="Vegetables">
+Vegetables
+</label>
+
+<label>
+<input type="radio" name="food" value="Meat">
+Meat
+</label>
+
+<label>
+<input type="radio" name="food" value="Other">
+Other
+</label>
+
+</div>
+
+<label>If Other</label>
+
+<input
+type="text"
+id="otherFood">
+
+<label>Allergies</label>
+
+<textarea
+id="allergies"
+rows="3"></textarea>
+
+<label>PYD Shirt Size</label>
+
+<select id="shirt">
+<option>XS</option>
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
+<option>XL</option>
+</select>
+
+<label>Preferred Workshop</label>
+
+<select id="workshop" required>
+
+<option value="">Select Workshop</option>
+
+<option>Workshop 1</option>
+<option>Workshop 2</option>
+<option>Workshop 3</option>
+<option>Workshop 4</option>
+<option>Workshop 5</option>
+<option>Workshop 6</option>
+<option>Workshop 7</option>
+
+</select>
+
+<div class="info">
+
+<b>Registration Fee:</b> ₱400.00
+
+<br><br>
+
+<b>Inclusions:</b>
+
+<ul>
+<li>Registration</li>
+<li>PYD T-Shirt</li>
+<li>Tote Bag</li>
+<li>Lanyard with ID</li>
+<li>Rosary</li>
+</ul>
+
+<b>GCash Payment</b>
+
+<br><br>
+
+ANNA ROSE SARMIENTO - 09518800981
+
+<br><br>
+
+OR
+
+<br><br>
+
+EASTER GRACE PATAL - 09814989172
+
+</div>
+
+<label>Upload Proof of Payment</label>
+
+<input
+type="file"
+id="receipt"
+accept="image/*">
+
+<button
+type="submit"
+class="submit-btn">
+
+Submit Registration
+
+</button>
+
+</form>
+
+</div>
+
+<script>
+    const form = document.getElementById("registrationForm");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const workshop = document.getElementById("workshop").value;
+
+    if(workshop === ""){
+        alert("Please select a workshop.");
+        return;
+    }
+
+    const file = document.getElementById("receipt").files[0];
+
+    if(file){
+
+        const reader = new FileReader();
+
+        reader.onload = function(){
+
+            saveRegistration(reader.result);
+
+        };
+
+        reader.readAsDataURL(file);
+
+    }else{
+
+        saveRegistration("");
+
+    }
+
+});
+
+function saveRegistration(receipt){
+
+    let registrations = JSON.parse(localStorage.getItem("registrations")) || [];
+
+    const food = document.querySelector('input[name="food"]:checked').value;
+
+    const newRegistration = {
+
+        fullname: document.getElementById("fullname").value.trim(),
+
+        age: document.getElementById("age").value,
+
+        zone: document.getElementById("zone").value.trim(),
+
+        gkk: document.getElementById("gkk").value.trim(),
+
+        contact: document.getElementById("contact").value.trim(),
+
+        guardian: document.getElementById("guardian").value.trim(),
+
+        guardianContact: document.getElementById("guardianContact").value.trim(),
+
+        food: food,
+
+        otherFood: document.getElementById("otherFood").value.trim(),
+
+        allergies: document.getElementById("allergies").value.trim(),
+
+        shirt: document.getElementById("shirt").value,
+
+        workshop: document.getElementById("workshop").value,
+
+        receipt: receipt,
+
+        date: new Date().toLocaleString()
+
+    };
+
+    // ==========================
+    // WORKSHOP LIMIT (25)
+    // ==========================
+
+    let workshopCount = registrations.filter(r =>
+        r.workshop === newRegistration.workshop
+    );
+
+    if(workshopCount.length >= 25){
+
+        alert("Sorry! This workshop is already FULL (25 participants).");
+
+        return;
+
+    }
+
+    // ==========================
+    // ZONE LIMIT (2)
+    // ==========================
+
+    let zoneCount = registrations.filter(r =>
+        r.zone.toLowerCase() === newRegistration.zone.toLowerCase()
+    );
+
+    if(zoneCount.length >= 2){
+
+        alert("Only 2 participants are allowed from the same Zone & GKK.");
+
+        return;
+
+    }
+
+    // ==========================
+    // SAVE
+    // ==========================
+
+    registrations.push(newRegistration);
+
+    localStorage.setItem(
+        "registrations",
+        JSON.stringify(registrations)
+    );
+
+    // ==========================
+    // SUCCESS
+    // ==========================
+
+    alert("✅ Registration Successful!");
+
+    // Clear all fields
+    form.reset();
+
+    // Scroll back to top
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PYD Admin Dashboard</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#e9edf3;
+}
+
+/* BACKGROUND IMAGE LIKE DESIGN */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url("66eba521-ce31-478d-bdfc-14ef2f985b65.png") no-repeat center;
+    background-size:cover;
+    opacity:0.15;
+    z-index:-1;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(90deg,#0b63e6,#0a58ca);
+    padding:25px 30px;
+    color:white;
+    border-radius:0 0 25px 25px;
+}
+
+.header h1{
+    margin:0;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.sub{
+    font-size:13px;
+    opacity:0.9;
+    margin-top:3px;
+}
+
+/* TOTAL CARD */
+.total-card{
+    
+    display:inline-block;
+    margin-top:12px;
+    padding:12px 18px;
+    border-radius:10px;
+    font-weight:bold;
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* WORKSHOPS GRID */
+.workshops{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:15px;
+    padding:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:12px;
+    text-align:center;
+    padding:18px 10px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    cursor:pointer;
+    transition:0.2s;
+    border:2px solid transparent;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:#0b63e6;
+}
+
+.card h3{
+    font-size:13px;
+    margin:5px 0;
+}
+
+/* COLORS PER WORKSHOP */
+.card:nth-child(1) p{color:#0b63e6;}
+.card:nth-child(2) p{color:#16a34a;}
+.card:nth-child(3) p{color:#7c3aed;}
+.card:nth-child(4) p{color:#f97316;}
+.card:nth-child(5) p{color:#06b6d4;}
+.card:nth-child(6) p{color:#ec4899;}
+.card:nth-child(7) p{color:#b45309;}
+
+.card p{
+    font-weight:bold;
+    margin:0;
+}
+
+/* TABLE BOX */
+.table-box{
+    background:white;
+    margin:0 20px;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.title-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+#title{
+    font-weight:bold;
+}
+
+button.delete-all{
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#0b63e6;
+    color:white;
+    padding:10px;
+    font-size:13px;
+}
+
+td{
+    text-align:center;
+    padding:10px;
+    font-size:13px;
+    border-bottom:1px solid #eee;
+}
+
+img{
+    width:40px;
+    height:40px;
+    border-radius:6px;
+    object-fit:cover;
+}
+
+button.view{
+    background:#0b63e6;
+    color:white;
+    border:none;
+    padding:5px 8px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button.del{
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:5px 8px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* EMPTY STATE */
+.empty{
+    text-align:center;
+    padding:20px;
+    color:#666;
+}
+    /* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+/* Tablet */
+@media screen and (max-width:992px){
+
+.workshops{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.table-box{
+    overflow-x:auto;
+}
+
+table{
+    min-width:700px;
+}
+
+}
+
+/* Mobile */
+@media screen and (max-width:768px){
+
+.header{
+    padding:20px;
+    text-align:center;
+}
+
+.header h1{
+    font-size:20px;
+}
+
+.sub{
+    font-size:12px;
+}
+
+.total-card{
+    display:block;
+    width:100%;
+    margin-top:15px;
+    text-align:center;
+}
+
+.workshops{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.title-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.delete-all{
+    width:100%;
+}
+
+.table-box{
+    overflow-x:auto;
+}
+
+table{
+    min-width:700px;
+}
+
+}
+
+/* Small Phones */
+@media screen and (max-width:480px){
+
+.workshops{
+    grid-template-columns:1fr;
+}
+
+.header h1{
+    font-size:18px;
+}
+
+.card{
+    padding:15px;
+}
+
+th,
+td{
+    font-size:12px;
+    padding:8px;
+}
+
+img{
+    width:45px;
+    height:45px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>PYD ADMIN DASHBOARD</h1>
+    <div class="sub">Manage and monitor all Parish Youth Day registrations</div>
+
+    <div class="total-card">
+        Total Registrants: <span id="total">0</span>
+    </div>
+</div>
+
+<div class="workshops">
+
+    <div class="card" onclick="show('Workshop 1')">
+        <h3>Workshop 1</h3>
+        <p id="w1">0/25</p>
+    </div>
+
+    <div class="card" onclick="show('Workshop 2')">
+        <h3>Workshop 2</h3>
+        <p id="w2">0/25</p>
+    </div>
+
+    <div class="card" onclick="show('Workshop 3')">
+        <h3>Workshop 3</h3>
+        <p id="w3">0/25</p>
+    </div>
+
+    <div class="card" onclick="show('Workshop 4')">
+        <h3>Workshop 4</h3>
+        <p id="w4">0/25</p>
+    </div>
+
+    <div class="card" onclick="show('Workshop 5')">
+        <h3>Workshop 5</h3>
+        <p id="w5">0/25</p>
+    </div>
+
+    <div class="card" onclick="show('Workshop 6')">
+        <h3>Workshop 6</h3>
+        <p id="w6">0/25</p>
+    </div>
+
+    <div class="card" onclick="show('Workshop 7')">
+        <h3>Workshop 7</h3>
+        <p id="w7">0/25</p>
+    </div>
+
+</div>
+
+<div class="table-box">
+
+    <div class="title-row">
+        <div id="title">Workshop 1 Participants</div>
+        <button class="delete-all" onclick="clearAll()">Delete All Registrations</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Zone</th>
+                <th>Contact</th>
+                <th>Picture</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="data"></tbody>
+    </table>
+</div>
+
+<script>
+
+if(sessionStorage.getItem("admin")!=="true"){
+
+    alert("Please login first.");
+
+    window.location="login.html";
+
+}
+
+</script>
+
+<script>
+
+let data = JSON.parse(localStorage.getItem("registrations")) || [];
+
+function update(){
+    document.getElementById("total").innerText = data.length;
+
+    let counts = {
+        "Workshop 1":0,"Workshop 2":0,"Workshop 3":0,
+        "Workshop 4":0,"Workshop 5":0,"Workshop 6":0,"Workshop 7":0
+    };
+
+    data.forEach(d=>{
+        counts[d.workshop]++;
+    });
+
+    for(let i=1;i<=7;i++){
+        document.getElementById("w"+i).innerText =
+        counts["Workshop "+i] + "/25";
+    }
+}
+
+function show(w){
+    document.getElementById("title").innerText = w + " Participants";
+
+    let tbody = document.getElementById("data");
+    tbody.innerHTML = "";
+
+    let filtered = data.filter(x=>x.workshop===w);
+
+    if(filtered.length===0){
+        tbody.innerHTML = `<tr><td colspan="5" class="empty">No Participants</td></tr>`;
+        return;
+    }
+
+    filtered.forEach((r,i)=>{
+        let index = data.indexOf(r);
+
+        tbody.innerHTML += `
+        <tr>
+            <td>${r.fullname}</td>
+            <td>${r.zone}</td>
+            <td>${r.contact}</td>
+            <td>${r.receipt ? `<img src="${r.receipt}">` : "No Image"}</td>
+            <td>
+                <button class="view" onclick="view(${index})">View</button>
+                <button class="del" onclick="del(${index})">Delete</button>
+            </td>
+        </tr>`;
+    });
+}
+
+function view(i){
+    alert(JSON.stringify(data[i],null,2));
+}
+
+function del(i){
+    if(confirm("Delete this registration?")){
+        data.splice(i,1);
+        localStorage.setItem("registrations",JSON.stringify(data));
+        update();
+        show("Workshop 1");
+    }
+}
+
+function clearAll(){
+    if(confirm("Delete ALL registrations?")){
+        localStorage.removeItem("registrations");
+        data = [];
+        update();
+        show("Workshop 1");
+    }
+}
+
+update();
+show("Workshop 1");
+
+</script>
+
+</body>
+</html>
